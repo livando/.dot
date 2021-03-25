@@ -1,0 +1,116 @@
+pathadd() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
+}
+pathprepend() {
+	for ((i=$#; i>0; i--)); 
+	do
+		ARG=${!i}
+	if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+		PATH="$ARG${PATH:+":$PATH"}"
+			fi
+			done
+}
+function bak {
+  mv $1 $1.bak
+}
+function title {
+  echo -ne "\033]0;"$*"\007"
+}
+function color {
+  case $1 in
+  green)
+    echo -e "\033]6;1;bg;red;brightness;57\a"
+    echo -e "\033]6;1;bg;green;brightness;197\a"
+    echo -e "\033]6;1;bg;blue;brightness;77\a"
+    ;;
+  red)
+    echo -e "\033]6;1;bg;red;brightness;270\a"
+    echo -e "\033]6;1;bg;green;brightness;60\a"
+    echo -e "\033]6;1;bg;blue;brightness;83\a"
+    ;;
+  orange)
+    echo -e "\033]6;1;bg;red;brightness;227\a"
+    echo -e "\033]6;1;bg;green;brightness;143\a"
+    echo -e "\033]6;1;bg;blue;brightness;10\a"
+    ;;
+  darkgreen)
+    echo -e "\033]6;1;bg;red;brightness;46\a"
+    echo -e "\033]6;1;bg;green;brightness;78\a"
+    echo -e "\033]6;1;bg;blue;brightness;49\a"
+    ;;
+  blue)
+    echo -e "\033]6;1;bg;red;brightness;42\a"
+    echo -e "\033]6;1;bg;green;brightness;100\a"
+    echo -e "\033]6;1;bg;blue;brightness;158\a"
+    ;;
+  pink)
+    echo -e "\033]6;1;bg;red;brightness;209\a"
+    echo -e "\033]6;1;bg;green;brightness;43\a"
+    echo -e "\033]6;1;bg;blue;brightness;98\a"
+    ;;
+  yellow)
+    echo -e "\033]6;1;bg;red;brightness;211\a"
+    echo -e "\033]6;1;bg;green;brightness;163\a"
+    echo -e "\033]6;1;bg;blue;brightness;38\a"
+    ;;
+  sb)
+    echo -e "\033]6;1;bg;red;brightness;169\a"
+    echo -e "\033]6;1;bg;green;brightness;219\a"
+    echo -e "\033]6;1;bg;blue;brightness;227\a"
+    ;;
+  esac
+}
+function mark {
+  open -a "Marked 2" $1
+}
+function redis {
+  open http://localhost:8081
+  redis-commander
+}
+function hg {
+  history | grep --color=auto $1
+}
+function gfind {
+  awk "/#\[$1-start\]/,/#\[$1-end\]/ { print }" ~/bin/dotfiles/bash/aliases
+}
+
+function count {
+  ls | wc -l
+}
+function take {
+  mkdir $1
+  cd $1
+}
+function tm {
+  tmux new -s $1
+}
+function tell {
+  cd $1
+  ls -l
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
+}
+parse_git_tag () {
+  git describe --tags 2> /dev/null
+}
+parse_git_branch_or_tag() {
+  local OUT="$(parse_git_branch)"
+  if [ "$OUT" == " ((no branch))" ]; then
+    OUT="($(parse_git_tag))";
+  fi
+  echo $OUT
+}
+function proml {
+
+  local        	BLUE="\[\033[0;34m\]"
+  local     	DEFAULT="\[\033[0m\]"
+  local 	BIBlue="\[\033[1;94m\]"       # Blue
+
+#PS1="\n\u: \w $BLUE\$(parse_git_branch) $DEFAULT \n➥ "
+PS1="\n\u: \w $BIBlue\$(parse_git_branch_or_tag) $DEFAULT \n➥ "
+#PS1="\e[0;31m[\u@\h \W]\$ \n\u: \w $BLUE\$(parse_git_branch_or_tag) $DEFAULT \n➥ "
+}
+proml

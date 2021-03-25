@@ -1,0 +1,6 @@
+export EDITOR='vim'
+export GPG_TTY=$(tty)
+PATH=$PATH:/usr/local/sbin
+OPEN_SSL="/usr/local/opt/openssl@1.1/bin"
+pathprepend $OPEN_SSL
+

@@ -1,0 +1,63 @@
+alias c=clear
+alias h=history
+alias l='ls -l'
+alias la='ls -la'
+alias who8080='lsof -i :8080'
+alias whor='lsof -i :3000'
+alias rc='vim ~/.bashrc'
+alias src='source ~/.bashrc'
+alias ..='cd ..'
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+alias npl='cd ~/.npm/_logs && $EDITOR "$(ls -1 *.log | tail -n 1)"'
+
+alias vi=vim
+alias svi='sudo vi'
+
+#[GIT-start]
+alias ghst="git for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/"
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias g='git checkout '
+alias go='git checkout '
+alias gl='git pull --rebase'
+alias gk='gitk --all&'
+alias gx='gitx --all'
+alias gpb='git publish-branch'
+alias got='git '
+alias get='git '
+alias gcp='git cherry-pick'
+alias gup='git fetch origin && git rebase origin/master'
+alias gum='git fetch origin && git rebase origin/main'
+alias gfo='git fetch origin'
+alias gmf="git merge --ff-only"
+#[GIT-end]
+
+#[TMUX]
+alias t=tmux
+alias ta='tmux attach -t'
+alias tx='tmuxinator'
+#[TMUX-end]
+
+#[RoR]
+alias ror='cd ~/dev/_rails'
+alias cof='cd ~/dev/_coffee'
+alias sr='rails'
+alias r='rails'
+alias sc='rails console'
+alias ss='rails server'
+alias rs='rspec spec'
+alias cu='cucumber -r features'
+alias cuw='cucumber --profile wip'
+alias ropen='open http://localhost:3000'
+alias ropen1='open http://localhost:3100'
+alias jopen='open http://localhost:3000/jasmine'
+alias emigrate='RAILS_ENV=test bundle exec rake db:migrate'
+alias dbg="grep 'DBG' **/*.rb"
+#[RoR]
