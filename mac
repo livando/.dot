@@ -5,7 +5,7 @@ echo "Congrats on your new Mac! Let's get you setup, Donald"
 echo "***********************"
 echo "*   Installing Brew   *"
 echo "***********************"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "**************************"
 echo "*   Installing Formula   *"
