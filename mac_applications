@@ -1,0 +1,16 @@
+echo "************************"
+echo "*   Installing Casks   *"
+echo "************************"
+brew install --cask \
+  1password \
+  alfred \
+  bartender \
+  docker \
+  iterm2 \
+  nvalt \
+  recordit \
+  sequel-pro \
+  zoom
+
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
