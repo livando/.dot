@@ -1,0 +1,38 @@
+#!/bin/bash
+
+echo "Congrats on your new Mac! Let's get you setup, Ryan"
+
+echo "***********************"
+echo "*   Installing Brew   *"
+echo "***********************"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo "**************************"
+echo "*   Installing Formula   *"
+echo "**************************"
+
+brew install \
+  awscli \
+  git-extras \
+  git-secrets \
+  jq \
+  nvm \
+  the_silver_searcher \
+  tmux \
+
+echo "************************"
+echo "*   Installing Casks   *"
+echo "************************"
+brew install --cask \
+  1password \
+  alfred \
+  bartender \
+  docker \
+  iterm2 \
+  nvalt \
+  recordit \
+  sequel-pro \
+  zoom
+
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
