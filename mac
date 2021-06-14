@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Congrats on your new Mac! Let's get you setup, Ryan"
+echo "Congrats on your new Mac! Let's get you setup, Donald"
 
 echo "***********************"
 echo "*   Installing Brew   *"
