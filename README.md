@@ -1,2 +1,2 @@
 # .dot
-Cross platform configuration files.
+Cross platform configuration files
