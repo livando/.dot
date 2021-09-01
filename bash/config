@@ -1,3 +1,11 @@
+pf() {
+  kubectl port-forward -n preview$1 pod/preview-db-postgresql-0 5432
+}
+juse() {
+  export JAVA_HOME=`/usr/libexec/java_home -v $1`
+  echo "Now using..."
+  echo `java -version`
+}
 pathadd() {
   if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
     PATH="${PATH:+"$PATH:"}$1"

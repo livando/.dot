@@ -1,9 +1,17 @@
+alias vim=nvim
+alias vi=vim
+alias ctags="`brew --prefix`/bin/ctags"
+
+alias f120="g feature/PP-120-admin-page-with-navigation"
+alias f121="g feature/PP-121_view-pinecone-users"
+
 alias c=clear
 alias h=history
 alias l='ls -l'
 alias la='ls -la'
 alias who8080='lsof -i :8080'
 alias whor='lsof -i :3000'
+alias work='cd ~/code/_work'
 alias rc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 alias ..='cd ..'
@@ -12,10 +20,15 @@ alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
+alias gcl='gcloud auth print-access-token'
+alias ctags="`brew --prefix`/bin/ctags"
 alias npl='cd ~/.npm/_logs && $EDITOR "$(ls -1 *.log | tail -n 1)"'
 
-alias vi=vim
 alias svi='sudo vi'
+alias jls='/usr/libexec/java_home -V'
+alias jl=jls
+alias jv='java -version'
+alias ju=juse
 
 #[GIT-start]
 alias ghst="git for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/"

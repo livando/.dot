@@ -1,6 +1,7 @@
 export EDITOR='nvim'
 export GPG_TTY=$(tty)
-PATH=$PATH:/usr/local/sbin
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+PATH=$JAVA_HOME:$PATH:/usr/local/sbin
 OPEN_SSL="/usr/local/opt/openssl@1.1/bin"
 pathprepend $OPEN_SSL
 
@@ -11,6 +12,9 @@ pathprepend $OPEN_SSL
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Use the python3 interpreter on your path
+export CLOUDSDK_PYTHON=python3
 
 # # -------------
 # # Ruby
