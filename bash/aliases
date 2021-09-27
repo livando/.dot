@@ -5,6 +5,13 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias f120="g feature/PP-120-admin-page-with-navigation"
 alias f121="g feature/PP-121_view-pinecone-users"
 
+#[GRADLE-start]
+alias grc="./gradlew clean build"
+alias grt="./gradlew test"
+alias grti="./gradlew testIntegration"
+alias grta="grc && grt && grti"
+#[GRADLE-end]
+
 alias c=clear
 alias h=history
 alias l='ls -l'

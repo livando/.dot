@@ -1,3 +1,12 @@
+grm() {
+  if [[ $# -eq 0 ]] ; then
+    echo 'Provide a valid state abbr: e.g. OH'
+  else
+    echo "Testing $1 new fee code vs legacy fee service"
+    ./gradlew fees-service:test --tests "co.spruce.migration.MigrationTest.$1 migration tests"
+  fi
+}
+
 pf() {
   kubectl port-forward -n preview$1 pod/preview-db-postgresql-0 5432
 }
@@ -5,6 +14,15 @@ juse() {
   export JAVA_HOME=`/usr/libexec/java_home -v $1`
   echo "Now using..."
   echo `java -version`
+}
+gbb(){
+  git branch | grep "*" | awk '{ print $2 }' | pbcopy
+}
+gbf(){
+  g $(gb | grep fe.*$1)
+}
+gbq(){
+  g $(gb | grep q.*$1)
 }
 pathadd() {
   if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then

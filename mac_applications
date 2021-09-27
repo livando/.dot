@@ -10,7 +10,22 @@ brew install --cask \
   nvalt \
   recordit \
   sequel-pro \
-  zoom
+  bear \
+  macvim \
+  nvim \
+  dbeaver-community \
+  alfred \
+  amazon-music \
+  divvy \
+  anki \
+  brainfm \
+  macvim \
+  marked \
+  visual-studio-code \
+  iterm2 \
+  nvalt \
+  postman \
+  intellij-idea \
 
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
